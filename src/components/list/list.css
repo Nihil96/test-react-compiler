@@ -1,0 +1,35 @@
+.task-list {
+  margin-top: 120px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 300px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.task-item span {
+  font-size: 16px;
+  color: #333;
+}
+
+.task-item.done span {
+  text-decoration: line-through;
+  color: #999;
+}

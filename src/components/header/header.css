@@ -1,0 +1,42 @@
+/* General header styles */
+.header {
+  width: 100%;
+  background-color: #f4f4f4;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Title styles */
+.header-title {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+/* Navigation styles */
+.header-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header-nav li {
+  margin: 0;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
