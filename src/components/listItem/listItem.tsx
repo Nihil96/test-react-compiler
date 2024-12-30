@@ -8,22 +8,25 @@ interface ItemListProps {
   toggleTask: (id: number[]) => void
 }
 
-const ItemList: React.FC<ItemListProps> = ({ id, done, text, toggleTask }) => {
-  console.log(`ItemList rendered: ${id}`)
+// Here memo is needed to prevent re-rendering all of the other items when a single item is toggled.
+const ItemList: React.FC<ItemListProps> = memo(
+  ({ id, done, text, toggleTask }) => {
+    console.log(`ItemList rendered: ${id}`)
 
-  return (
-    <>
-      <div className={`task-item ${done ? "done" : ""}`}>
-        <input
-          type="checkbox"
-          checked={done}
-          onChange={() => toggleTask([id])}
-        />
-        <span>{text}</span>
-      </div>
-      <HeavyComponent />
-    </>
-  )
-}
+    return (
+      <>
+        <div className={`task-item ${done ? "done" : ""}`}>
+          <input
+            type="checkbox"
+            checked={done}
+            onChange={() => toggleTask([id])}
+          />
+          <span>{text}</span>
+        </div>
+        <HeavyComponent />
+      </>
+    )
+  }
+)
 
 export default ItemList
