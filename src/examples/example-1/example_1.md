@@ -60,7 +60,7 @@ These optimizations significantly improve the responsiveness of the application:
 
 ### Out-of-the-Box Optimizations
 
-- Components like `<Header />` and `<List />` are automatically memoized, so they do not re-render unnecessarily when the `count` state changes.
+- React Compiler by default memoizes all the components automatically, so `<Header />` and `<List />` do not re-render unnecessarily when the `count` state changes.
 - Incrementing the `count` state causes only the `<App />` component to re-render, updating immediately without delay.
 
 ### Manual Memoization Still Needed
