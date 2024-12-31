@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# Exploring and Experimenting with React Compiler
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository demonstrates experiments with the new React Compiler (beta) using React v19. It includes various examples showcasing specific use cases and optimizations enabled by the compiler.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ensure that you have Node.js version 18 or higher installed on your machine.
 
-## Expanding the ESLint configuration
+## Usage
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository
+2. Navigate to the project
+3. Install dependencies with `npm install`
+4. Start the development server: `npm run dev`
 
-- Configure the top-level `parserOptions` property like this:
+## Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- `components/`: Simple reusable components.
+- `examples/`: Contains self-contained test cases for React Compiler.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+In the `examples/` directory, you will find individual folders, each containing an <App /> component that renders a specific example. Each example highlights a particular feature or optimization provided by the React Compiler. Additionally, every example folder includes a `.md` file that explains:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. How the components behave without the React Compiler.
+2. The manual steps that can be taken to optimize their performance.
+3. How the React Compiler automatically applies optimizations by default.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+These examples serve as practical guides to understanding and leveraging the React Compiler effectively.
