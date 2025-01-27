@@ -1,22 +1,30 @@
 import { useState } from "react"
 import "./App.css"
-import Header from "./components/header/header"
-import List from "./components/list/list"
+import UserCard from "./components/userCard/userCard"
 
 function App() {
-  const [count, setCount] = useState(0)
-  console.log("App re-rendered")
+    const [clickCount, setClickCount] = useState(0)
 
-  return (
-    <>
-      <Header />
-      <List />
+    const user = {
+        name: "John Doe",
+        age: 35,
+        profession: "Software Engineer",
+    }
 
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is: {count}
-      </button>
-    </>
-  )
+    const handleCardClick = () => {
+        console.log("Card Clicked")
+    }
+
+    console.log("App rendered")
+    return (
+        <div>
+            <UserCard user={user} handleCardClick={handleCardClick} />
+
+            <button onClick={() => setClickCount(clickCount + 1)}>
+                Increment
+            </button>
+        </div>
+    )
 }
 
 export default App
